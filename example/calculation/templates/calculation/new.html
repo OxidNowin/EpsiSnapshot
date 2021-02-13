@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 
-{% block title %}Новый рассчет{% endblock %}
+{% block title %}Новый рассчёт{% endblock %}
 
 {% block content %}
 
@@ -15,7 +15,9 @@
           <strong>{{ error_message }}</strong>
           {% endif %}
           {% csrf_token %}
-          {{ form.as_p }}
+          {{ form }}
+          /*  Можешь сделать также как и в login.html,т.е. form-это inputы с лейблами и можешь удалить это на своё усмотрение
+          csrf token не удалять  и конструкцию с error-message его тоже надо красиво вставить куданить чтобы было заметно появление ошибки  */
           <button type="submit" class="btn-default">Рассчитать!</button>
         </form>
       </div>
