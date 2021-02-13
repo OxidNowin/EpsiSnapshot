@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% load staticfiles %}
+
+{% block content %}
+
+{% include "include/header.html" %}
+
+<main class="main">
+    <div class="detail">
+      <div class="container detail__container">
+      </div>
+    </div>
+</main>
+
+{% include 'include/footer.html' %}
+
+<script src="{% static 'js/script.js'%}"></script>
+
+{% endblock content %}

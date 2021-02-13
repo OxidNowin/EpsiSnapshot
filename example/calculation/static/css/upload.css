@@ -1,0 +1,8 @@
+.upload {
+  background: var(--yellow-bg-color);
+}
+
+.upload__container {
+  min-height: 100vh;
+  background: var(--gray-bg-color);
+}

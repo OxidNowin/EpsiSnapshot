@@ -1,0 +1,65 @@
+<html>
+<body>
+<div class="dashboard">
+  <div class="calculation">
+    <h1>{{ post.title}}</h1>
+    <p>Автор: {{ post.author }}</p>
+    <p>Расчет произведен по файлу {{ post.file_name }} загруженному {{ post.created_date }}</p>
+
+    <div class="meters">
+      <div class="csi">
+        <center><h3>Индекс удовлетворенности</h3></center>
+        <center><h3>(в баллах)</h3></center>
+        <img id="csi_meter_needle" src="{% static 'img/svg-meter-gauge-needle.svg'%}" alt="">
+        <img src="{% static 'img/schet.png'%}"/>
+        <input id="slider1"  value="{{post.csi}}"/>
+        <center><h2>{{post.csi}}</h2></center>
+      </div>
+      <div class="loy">
+        <center><h3>Индекс лояльности </h3></center>
+        <center><h3>(в баллах)</h3></center>
+        <img id="loy_meter_needle" src="{% static 'img/svg-meter-gauge-needle.svg'%}" alt="">
+        <img src="{% static 'img/schet.png'%}"/>
+        <input id="slider2"  value="{{post.loyalty}}"/>
+        <center><h2>{{post.loyalty}}</h2></center>
+      </div>
+    </div>
+    <div class="scale">
+      <img src="{% static 'img/scale.png' %}" alt="">
+    </div>
+    <div class="nps_barrier">
+      <div class="nps">
+        <center><h2>NPS</h2></center>
+        <img src="{% static 'img/nps.png' %}" alt="">
+        <p id="nps">{{ post.nps }}</p>
+      </div>
+      <div class="barrier">
+        <h2>Барьер перехода (баллы)</h2>
+        <img src="{% static 'img/barrier.png' %}" alt="">
+        <p id="barrier">{{ post.barrier }}</p>
+      </div>
+    </div>
+    <div class="other">
+      <div class="matrix">
+        <h2>Матрица прогноза будущих продаж:</h2>
+        <img src="{% static 'img/matr.png'%}"/>
+        <span>
+        <p id = "gr_one">{{ post.one }}%</p>
+        <p id = "gr_two">{{ post.two }}%</p>
+        <p id = "gr_three">{{ post.three }}%</p>
+        <p id = "gr_four">{{ post.four }}%</p>
+        <p id = "gr_five">{{ post.five }}%</p>
+        </span>
+      </div>
+      <div class="regress">
+        <h2>Рассчитайте изменение лояльности</h2>
+        <p>При увеличении индекса удовлетворенности на <input id="csi_up" value="0"> баллов</p>
+        <input type="button" name="" value="Рассчитать" id="calc" onclick="reg_calc();">
+        <p>индекс лояльности изменится на <input id="loy_up" value="0"/> баллов</p>
+        <input id="coefa" value="{{post.regressa}}"/>
+    </div>
+  </div>
+</div>
+</div>
+</body>
+</html>

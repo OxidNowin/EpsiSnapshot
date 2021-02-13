@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+{% block title %}EpsiSnapshot{% endblock %}
+{% load staticfiles %}
+
+{% block content %}
+
+<div class="table-container">
+    <div class="table">
+      <div class="table-close">
+        <svg version="1.1" id="Capa_1" x="0px" y="0px"
+          viewBox="0 0 511.76 511.76" style="enable-background:new 0 0 511.76 511.76;" xml:space="preserve">
+        <g>
+          <g>
+            <path d="M436.896,74.869c-99.84-99.819-262.208-99.819-362.048,0c-99.797,99.819-99.797,262.229,0,362.048
+              c49.92,49.899,115.477,74.837,181.035,74.837s131.093-24.939,181.013-74.837C536.715,337.099,536.715,174.688,436.896,74.869z
+              M361.461,331.317c8.341,8.341,8.341,21.824,0,30.165c-4.16,4.16-9.621,6.251-15.083,6.251c-5.461,0-10.923-2.091-15.083-6.251
+              l-75.413-75.435l-75.392,75.413c-4.181,4.16-9.643,6.251-15.083,6.251c-5.461,0-10.923-2.091-15.083-6.251
+              c-8.341-8.341-8.341-21.845,0-30.165l75.392-75.413l-75.413-75.413c-8.341-8.341-8.341-21.845,0-30.165
+              c8.32-8.341,21.824-8.341,30.165,0l75.413,75.413l75.413-75.413c8.341-8.341,21.824-8.341,30.165,0
+              c8.341,8.32,8.341,21.824,0,30.165l-75.413,75.413L361.461,331.317z"/>
+          </g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        </svg>
+      </div>
+    </div>
+</div>
+
+{% include "include/header.html" %}
+
+<main class="main">
+  <section class="manual">
+        <div class="container manual__container">
+          <h2 class="manual__title">Инструкция по использованию сервиса</h2>
+          <ul class="manual__list">
+            <li class="manual__item">
+              <img src="{% static 'img/one.png' %}" alt="one" class="manual__item-img">
+              <p class="manual__item-text">
+                Собирите информацию о ваших клиентах
+              </p>
+            </li>
+            <li class="manual__item">
+              <img src="{% static 'img/two.png' %}" alt="two" class="manual__item-img">
+              <div class="manual__item-text">
+                <span>
+                  Составьте таблицу 
+                </span>       
+                <span class="manual__item-arrow table-show">
+                  <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                       viewBox="0 0 292.362 292.362" style="enable-background:new 0 0 292.362 292.362;"
+                      xml:space="preserve">
+                    <g>
+                      <path d="M286.935,69.377c-3.614-3.617-7.898-5.424-12.848-5.424H18.274c-4.952,0-9.233,1.807-12.85,5.424
+                        C1.807,72.998,0,77.279,0,82.228c0,4.948,1.807,9.229,5.424,12.847l127.907,127.907c3.621,3.617,7.902,5.428,12.85,5.428
+                        s9.233-1.811,12.847-5.428L286.935,95.074c3.613-3.617,5.427-7.898,5.427-12.847C292.362,77.279,290.548,72.998,286.935,69.377z"/>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                  </svg>
+                </span>
+                <span>
+                  (Формат: xlsx, xlsm, xltx, xltm)
+                </span>
+              </div>
+            </li>
+            <li class="manual__item">
+              <img src="{% static 'img/three.png' %}" alt="three" class="manual__item-img">
+              <p class="manual__item-text">
+                Нажмите кнопку загрузить
+              </p>
+            </li>
+          </ul>
+        </div>
+  </section>
+  <section class="file">
+        <div class="container file__container">
+          <a href="{% url 'new' %}" class="file__button file__unpload-button">
+            Загрузить
+          </a>
+          <a href="{% url 'archive' %}" class="file__button file__archive-button">
+            Архив
+          </a>
+        </div>
+  </section>
+</main>
+
+{% include "include/footer.html" %}
+
+{% endblock %}

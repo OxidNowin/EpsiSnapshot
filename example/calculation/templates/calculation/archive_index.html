@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Архив вычислений{% endblock %}
+{% load staticfiles %}
+{% block content %}
+
+{% include "include/header.html" %}
+
+<main class="main">
+	<section class="archive">
+		{% if archive_latest_post_list %}
+	     <div class="container archive__container">
+	       <ul class="archive__list">
+	       {% for post in archive_latest_post_list %}
+	         <li class="archive__item">
+	           <a href="{% url 'detail' post.id %}" class="archive__item-link"></a>
+	         </li>
+	        {% endfor %}
+	       </ul>
+	    </div>
+		<script src="{% static 'js/script_index.js'%}"></script>
+		{% else %}
+		     <div class="container archive__container">
+		       <ul class="archive__list">
+		           <h2>Вы ещё не пользовались нашим сервисом, <a href="{% url 'dashboard' %}">назад</a></h2>
+		       </ul>	
+		    </div>
+		{% endif %}
+	</section>
+</main>
+
+{% include "include/footer.html" %}
+
+{% endblock %}

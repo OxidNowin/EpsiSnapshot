@@ -1,0 +1,288 @@
+.dashboard {
+  width: 96%;
+  margin: 0 auto;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.fileloader{
+  flex: 13%;
+  background-color: #DCDCDC;
+  padding: 10px;
+  margin-right: 1%;
+  border-radius: 30px;
+  height: 190px;
+}
+
+#load{
+  margin-bottom: 10px;
+  color: #fff;
+  text-decoration: none;
+  user-select: none;
+  background: #B22222;
+  padding: .7em 3em;
+  outline: none;
+}
+#arch{
+  margin-bottom: 10px;
+  color: #fff;
+  text-decoration: none;
+  user-select: none;
+  background: #B22222;
+  padding: .7em 3.85em;
+  outline: none;
+}
+#load:hover { background: rgb(232,95,76);text-decoration: none;}
+#arch:active { background: rgb(152,15,0); }
+#arch:hover { background: rgb(232,95,76);text-decoration: none;}
+#load:active { background: rgb(152,15,0); }
+
+.fileloader p{
+  margin-bottom: 40px;
+}
+
+.calculation{
+  flex: 86%;
+  background-color: #FFFFFF;
+  padding: 20px;
+  border-radius: 30px;
+}
+
+#gr_one{
+    position:absolute;
+    top:400px;
+    left:130px;
+}/*критики*/
+
+#gr_two{
+    position:absolute;
+    top:250px;
+    left:130px;
+}/*нелояльные клиенты*/
+
+#gr_three{
+    position:absolute;
+    top:400px;
+    left:330px;
+}/*лояльные клиенты*/
+
+#gr_four{
+    position:absolute;
+    top:180px;
+    left:370px;
+}/* рекомендатели*/
+
+#gr_five{
+    position:absolute;
+    top:300px;
+    left:330px;
+}/*основные клиенты*/
+
+.csi, .loy{
+    margin: 30px 100px;
+    display: inline-block;
+    position: relative;
+}
+
+.csi img, .loy img{
+    width:400px;
+}
+
+#csi_meter_needle{
+	  left: 200px;
+    top: 210px;
+    position: absolute;
+    width: 15px;
+    display: inline-block;
+    transform-origin:bottom center;
+    transform:rotate(265deg);
+    z-index: 100;
+}
+#loy_meter_needle{
+    width: 15px;
+    left: 200px;
+    top: 210px;
+    position: absolute;
+    display: inline-block;
+    transform-origin:bottom center;
+    transform:rotate(265deg);
+    z-index: 100;
+}
+
+#slider1 {
+  left: 0;
+  margin: auto;
+  right: 0;
+  position: absolute;
+  visibility:hidden;
+}
+#slider2 {
+  left: 0;
+  margin: auto;
+  right: 0;
+  position: absolute;
+  visibility:hidden;
+}
+.csi_index, .loy_index{
+    margin: 10px;
+    display: inline-block;
+    position:relative;
+}
+
+.csi_index img, .loy_index img{
+    width:150px;
+}
+
+.scale {
+  align-items: center;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.scale img{
+  height: 100px;
+  width: auto;
+}
+
+.nps_barrier{
+  width: 100%;
+  align-items: center;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 0;
+  padding: 0 100px;
+}
+
+.nps{
+  display:inline-block;
+  position:relative;
+  margin: 0 50px;
+  width: 400px;
+}
+
+
+.nps img{
+  height: 200px;
+}
+
+#nps{
+  float: right;
+  font-size: 4em;
+  margin-top: 50px;
+  margin-right: 50px;
+}
+
+.barrier{
+  margin: 0 50px;
+  display: inline-block;
+  position: relative;
+  width: 440px;
+}
+
+
+#barrier{
+  float: right;
+  font-size: 4em;
+  margin-top: 50px;
+  margin-right: 80px;
+}
+
+
+.barrier img{
+  height: 200px;
+}
+
+.other{
+  width: 100%;
+  align-items: center;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  margin: 50px 0;
+  padding: 0 50px;
+}
+
+.matrix {
+    display:inline-block;
+    position:relative;
+    margin: 0 auto;
+    width: 100%;
+    margin-left: 50px;
+    width: 600px;
+}
+
+.matrix img{
+    height:500px;
+
+}
+
+.matrix span {
+    color:#FFFFFF;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:20px;
+    padding:10px 30px;
+}
+
+.matrix h3{
+  margin-left: 50px;
+}
+
+.meters{
+  width: 100%;
+  align-items: center;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.regress{
+  display: inline-block;
+  position: relative;
+  height: 570px;
+}
+
+.regress h2{
+    margin-bottom: 100px;
+}
+
+.regress p{
+  font-size: 1.5em;
+}
+
+#csi_up{
+  width: 80px;
+}
+
+#loy_up{
+  width: 80px;
+}
+
+#calc{
+  margin-bottom: 10px;
+  color: #fff;
+  text-decoration: none;
+  user-select: none;
+  background: #B22222;
+  padding: .7em 1.5em;
+  outline: none;
+}
+
+#coefa{
+  left: 0;
+  margin: auto;
+  right: 0;
+  position: absolute;
+  visibility: hidden;
+}
+
+#coefb{
+  left: 0;
+  margin: auto;
+  right: 0;
+  position: absolute;
+  visibility: hidden;
+}
