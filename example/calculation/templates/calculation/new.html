@@ -8,21 +8,25 @@
 {% include "include/header.html" %}
 
 <main class="main">
-    <section class="upload">
-      <div class="container upload__container">
-        <form method="POST" enctype="multipart/form-data" class="post-form">
-          {% if error_message %}
-          <strong>{{ error_message }}</strong>
-          {% endif %}
-          {% csrf_token %}
-          {{ form }}
-          /*  Можешь сделать также как и в login.html,т.е. form-это inputы с лейблами и можешь удалить это на своё усмотрение
-          csrf token не удалять  и конструкцию с error-message его тоже надо красиво вставить куданить чтобы было заметно появление ошибки  */
-          <button type="submit" class="btn-default">Рассчитать!</button>
-        </form>
-      </div>
-    </section>
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="org">
+      <h2 class="org__title">Введите название организации</h2>
+      {% if error_message %}
+      <strong class="org__error">{{ error_message }}</strong>
+      {% endif %}
+      <input type="text" name="title" required id="org__form-name" class="org__form-name">
+      <input type="file" name="file" id="real-file" hidden="hidden">
+      <button type="button" id="custom-button" class="org__file-button typical__button_small">Выберите файл</button>
+      <span id="custom-text" class="org__file-text">Файл не выбран</span>
+    </div>
+    <div class="calculate">
+      <button type="submit" class="typical__button">Рассчитать</button>
+    </div>
+  </form>
 </main>
+
+<script defer src="{% static 'js/fileupload.js' %}"></script>
 
 {% include 'include/footer.html' %}
 

@@ -25,3 +25,4 @@ function reg_calc() {
 		alert("Введите значение в промежутке от 1 до " + (100-slider1).toFixed(1));
 	}
 }
+

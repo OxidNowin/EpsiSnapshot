@@ -11,41 +11,27 @@
 	     <div class="container archive__container">
 	       <ul class="archive__list">
 	       {% for post in archive_latest_post_list %}
-	         <li class="archive__item">
-			    <div class="post_index">
-
-					<div class="date">
-			             {{ post.created_date }}
+	         <li class="archive__item">			    
+				<div class="date">
+			        {{ post.created_date }}
+				</div>
+				<div class="archive_title">
+					<h2><a href="{% url 'detail' post.id %}">{{ post.title}}</a></h2>
+				</div>
+				<div class="csi_index" >
+					<img id="csi_index_meter_needle" src="{% static 'img/svg-meter-gauge-needle.svg'%}" alt="">
+					<img src="{% static 'img/schet.png'%}"/>
+					<input id="slider1"  value="{{post.csi}}"/>
+					<p><center>CSI: {{post.csi}}</center></p>
+				</div>
+				<div class="loy_index">
+					<div>
+						<img id="loy_index_meter_needle" src="{% static 'img/svg-meter-gauge-needle.svg'%}" alt="">
 					</div>
-					<div class="archive_title">
-						<h2><a href="{% url 'detail' post.id %}">{{ post.title}}</a></h2>
-					</div>
-
-						<div class="csi_index" >
-
-								<img id="csi_index_meter_needle" src="{% static 'img/svg-meter-gauge-needle.svg'%}" alt="">
-
-							<img src="{% static 'img/schet.png'%}"/>
-
-							<input id="slider1"  value="{{post.csi}}"/>
-							<p><center>CSI: {{post.csi}}</center></p>
-
-
-						</div>
-
-
-						<div class="loy_index">
-							<div>
-								<img id="loy_index_meter_needle" src="{% static 'img/svg-meter-gauge-needle.svg'%}" alt="">
-							</div>
-							<img src="{% static 'img/schet.png'%}"/>
-							<input id="slider2"  value="{{post.loyalty}}"/>
-							<p><center>Лояльность: {{post.loyalty}}</center></p>
-
-
-						</div>
-			    </div>
-	           <a href="{% url 'detail' post.id %}" class="archive__item-link"></a>
+					<img src="{% static 'img/schet.png'%}"/>
+					<input id="slider2"  value="{{post.loyalty}}"/>
+					<p><center>Лояльность: {{post.loyalty}}</center></p>
+			   	</div>
 	         </li>
 	        {% endfor %}
 	       </ul>
@@ -54,7 +40,14 @@
 		{% else %}
 		     <div class="container archive__container">
 		       <ul class="archive__list">
-		           <h2>Вы ещё не пользовались нашим сервисом, <a href="{% url 'dashboard' %}">назад</a></h2>
+		          <div class="archive__warning">
+								<a href="{% url 'dashboard' %}" class="archive__back-button">
+									<svg data-name="Layer 2" id="Layer_2" viewBox="0 0 100 100"><title/><path d="M50,11A39,39,0,1,0,89,50,39.05,39.05,0,0,0,50,11ZM62,53H45.24l3.88,3.88a3,3,0,0,1,0,4.24,3,3,0,0,1-4.24,0l-9-9a3.44,3.44,0,0,1-.38-.46l-.12-.22c-.05-.1-.11-.19-.15-.29s-.06-.2-.09-.3a2.58,2.58,0,0,1-.08-.26,2.93,2.93,0,0,1,0-1.18,2.58,2.58,0,0,1,.08-.26c0-.1,0-.2.09-.3s.1-.19.15-.29l.12-.22a3.44,3.44,0,0,1,.38-.46l9-9a3,3,0,0,1,4.24,4.24L45.24,47H62a3,3,0,0,1,0,6Z"/></svg>
+								</a>
+								<span class="archive__warning-text">
+									Вы ещё не пользовались нашим сервисом
+								</span>
+							</div>
 		       </ul>	
 		    </div>
 		{% endif %}
@@ -62,7 +55,5 @@
 </main>
 
 {% include "include/footer.html" %}
-
-<script src="{% static 'js/script_index.js'%}"></script>
 
 {% endblock %}

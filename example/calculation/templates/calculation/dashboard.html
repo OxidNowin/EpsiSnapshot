@@ -65,14 +65,14 @@
             <li class="manual__item">
               <img src="{% static 'img/one.png' %}" alt="one" class="manual__item-img">
               <p class="manual__item-text">
-                Собирите информацию о ваших клиентах
+                Собeрите информацию о ваших клиентах
               </p>
             </li>
             <li class="manual__item">
               <img src="{% static 'img/two.png' %}" alt="two" class="manual__item-img">
               <div class="manual__item-text">
                 <span>
-                  Составьте таблицу 
+                  Загрузите Exel таблицу (пример)
                 </span>       
                 <span class="manual__item-arrow table-show">
                   <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -123,7 +123,7 @@
             <li class="manual__item">
               <img src="{% static 'img/three.png' %}" alt="three" class="manual__item-img">
               <p class="manual__item-text">
-                Нажмите кнопку загрузить
+                Нажмите кнопку рассчитать
               </p>
             </li>
           </ul>
@@ -131,10 +131,10 @@
   </section>
   <section class="file">
         <div class="container file__container">
-          <a href="{% url 'new' %}" class="file__button file__unpload-button">
+          <a href="{% url 'new' %}" class="typical__button file__button file__unpload-button">
             Загрузить
           </a>
-          <a href="{% url 'archive' %}" class="file__button file__archive-button">
+          <a href="{% url 'archive' %}" class="typical__button file__button file__archive-button">
             Архив
           </a>
         </div>

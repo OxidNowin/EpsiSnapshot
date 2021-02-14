@@ -68,26 +68,6 @@
   width: 250px;
 }
 
-#signin__button {
-  cursor: pointer;
-  background: var(--black-color);
-  border-radius: 5px;
-  margin-top: 20px;
-  width: 150px;
-  height: 40px;
-  border: 0px;
-  color: var(--white-color);
-  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
-
-#signin__button:hover {
-  background-color: var(--red-color);
-}
-
-#signin__button:active {
-  transform: translateY(2px);
-}
-
 /* :root */
 
 :root {
@@ -108,9 +88,60 @@
   max-width: 1200px;
 } 
 
-body {
+.main, body {
   font-family: 'Roboto', sans-serif;
   box-sizing: border-box;
+}
+
+.typical__button {
+  width: 200px;
+  height: 60px;
+  border: 0px;
+  border-radius: 5px;
+  background-color: #202020;
+  box-shadow: 0px 3px 0px #181818;
+  color: var(--white-color);
+  font-weight: 400;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.typical__button:hover {
+  background-color: var(--red-color);
+}
+
+.typical__button:active {
+  transform: translateY(2px);
+}
+
+.typical__button_small {
+  padding: 10px;
+  border: 0px;
+  border-radius: 5px;
+  background-color: #202020;
+  box-shadow: 0px 3px 0px #181818;
+  color: var(--white-color);
+  font-weight: 400;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.typical__button_small:hover {
+  background-color: var(--red-color);
+}
+
+.typical__button_small:active {
+  transform: translateY(2px);
 }
 
 /* header */
@@ -236,25 +267,8 @@ body {
   height: 300px;
 }
 
-.signin__button {
-  width: 200px;
-  height: 60px;
-  border: 0px;
-  border-radius: 5px;
-  background: var(--black-color);
-  color: var(--white-color);
-  font-weight: 400;
-  font-size: 18px;
-  cursor: pointer;
-  transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
-
-.signin__button:hover {
-  background: var(--red-color);
-}
-
-.signin__button:active {
-  transform: translateY(2px);
+#signin__button {
+  margin-top: 20px;
 }
 
 .sginin__header {

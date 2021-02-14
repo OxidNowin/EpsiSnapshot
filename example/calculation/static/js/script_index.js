@@ -1,5 +1,5 @@
 /*стрелкu*/
-var count = document.getElementsByClassName('post_index').length;
+var count = document.getElementsByClassName('archive__item').length;
 
 for (var i = 0; i < count; i++) {
 	var meter_needle =  document.querySelectorAll('#csi_index_meter_needle')[i];

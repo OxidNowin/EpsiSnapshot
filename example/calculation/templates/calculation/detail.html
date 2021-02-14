@@ -9,117 +9,125 @@
 {% include "include/header.html" %}
 
 <main class="main">
-    <div class="detail">
-      <div class="container detail__container">
-	    <div class="calculation">
-	      <h1>{{ post.title}}</h1>
-	      <p>Автор: {{ post.author }}</p>
-	      <p>Расчет произведен по файлу {{ post.file_name }} загруженному {{ post.created_date }}</p>
-
-	        <div class="meters">
-	          <div class="csi">
-	            <center><h3>Индекс удовлетворенности</h3></center>
-	            <center><h3>(в баллах)</h3></center>
-	            <img id="csi_meter_needle" src="{% static 'img/svg-meter-gauge-needle.svg'%}" alt="">
-	            <img src="{% static 'img/GaugeChart3.png'%}"/>
-	            <input id="slider1"  value="{{post.csi}}"/>
-	            <center><h1>{{post.csi}}</h1></center>
-	          </div>
-	          <div class="loy">
-	            <center><h3>Индекс лояльности </h3></center>
-	            <center><h3>(в баллах)</h3></center>
-	            <img id="loy_meter_needle" src="{% static 'img/svg-meter-gauge-needle.svg'%}" alt="">
-	            <img src="{% static 'img/GaugeChart3.png'%}"/>
-	            <input id="slider2"  value="{{post.loyalty}}"/>
-	            <center><h1>{{post.loyalty}}</h1></center>
-	          </div>
-	        </div>
-	        <div class="scale">
-	          <img src="{% static 'img/scale.png' %}" alt="">
-	        </div>
-	        <div class="nps_barrier">
-	          <div class="nps">
-	            <center><h2>NPS</h2></center>
-	            <img src="{% static 'img/nps.png' %}" alt="">
-	            <p id="nps">{{ post.nps }}</p>
-	            <details>
-	              <summary>Про NPS:</summary>
-	              <div class="detail">
-	                Показатель NPS, значение которого больше 0 принято считать как "хорошие отношения с клиентами", значение от "+50" стоит рассматривать как "отличные отношения с клиентами", показатель более "+70" стоит рассматривать как "исключительные отношения с клиентами".
-	              </div>
-	            </details>
-	          </div>
-
-	          <div class="barrier">
-	            <h2>Барьеры перехода (баллы)</h2>
-	            <img src="{% static 'img/barrier.png' %}" alt="">
-	            <p id="barrier">{{ post.barrier }}</p>
-	            <details>
-	              <summary>Про барьеры перехода:</summary>
-	              <div class="detail">
-	                Положительное значение свидетельствует о наличии выстроенных барьеров перехода для клиентов к другим поставщикам, которые связаны со значительными затратами для них (денежные, временные, психологические, транзакционные и т.д.).
-	              </div>
-	            </details>
-	          </div>
-
-	        </div>
-	        <div class="other">
-	          <section class="matrix">
-	            <h2>Матрица прогноза будущих продаж:</h2>
-	            <div class="box clearfix">
-	        			<div class="box__left" style="color: #FFFFFF;">
-	        				<div class="left__top">
-	                  <center> <h5>Нелояльные клиенты</h5> </center>
-	                  <center><p id="gr_two"> {{ post.two }}% </p></center>
-	        				</div>
-	        				<div class="left__bot">
-	                  <center> <h5>Критики</h5> </center>
-	                  <center><p id="gr_one"> {{ post.one }}% </p></center>
-	        				</div>
-	        			</div>
-	        			<div class="box__right">
-	        				<div class="right__top">
-	        					<div class="top__small">
-	                    <center> <h5>Рекомендатели</h5> </center>
-	                    <center><p id="gr_four"> {{ post.four }}% </p></center>
-	        					</div>
-	                  <center> <h5>Основные клиенты</h5> </center>
-	                  <center><p id="gr_five"> {{ post.five }}% </p></center>
-	        				</div>
-	        				<div class="right__bot">
-	                  <center> <h5>Лояльные клиенты</h5> </center>
-	                  <center><p id="gr_three"> {{ post.three }}% </p></center>
-	        				</div>
-	        			</div>
-	                <div class="loyalty">Лояльность</div>
-	                <div class="satisfaction">Удовлетворенность</div>
-	                <div class="first__arrow"></div>
-	                <div class="second__arrow"></div>
-	        		</div>
-	          </section>
-	          <div class="regress">
-	            <h2>Рассчитайте изменение лояльности</h2>
-	            <p>При увеличении индекса удовлетворенности на <input id="csi_up" value="0"> баллов</p>
-	            <input type="button" name="" value="Рассчитать" id="calc" onclick="reg_calc();">
-	            <p id="loy_up">индекс лояльности изменится на ... баллов</p>
-	            <input id="coefa" value="{{post.regressa}}"/>
-	        </div>
-	      </div>
-	      <details class="matrix_det">
-	        <summary>Про матрицу:</summary>
-	        <div class="detail">
-	          <ul>
-	            <li><strong>Рекомендатели</strong> – наиболее удовлетворенные и одновременно высоколояльные клиенты, они представляют собой группу наиболее надежных и ценных клиентов. </li>
-	            <li><strong>Основные клиенты</strong> – в достаточной степени удовлетворенные и лояльные клиенты. На них могут быть направлены основные усилия по развитию отношений, комплексные программы улучшений и перевода в группу рекомендателей. </li>
-	            <li><strong>Лояльные клиенты</strong> – группа тех, кто привязан к поставщику из-за отсутствия возможности использовать продукцию других поставщиков, но они не проявляют удовлетворенности сотрудничеством (дают скорее негативные оценки). Удержание этой группы клиентов очень сильно зависит от действий конкурентов. </li>
-	            <li><strong>Нелояльные клиенты</strong> – удовлетворены сотрудничеством в достаточной степени, но не имеют серьезной привязки к компании-поставщику и готовы легко перейти к другим поставщикам, если сложатся благоприятные обстоятельства для перехода. </li>
-	            <li><strong>Клиенты-критики</strong> демонстрируют слабую удовлетворенность и лояльность компании, скорее негативное отношение к сотрудничеству. В этот сегмент попадают те, кто склонен сокращать сотрудничество с компанией. Согласно данным EPSI в нормальной конкурентной среде клиенты-критики прекращают взаимодействие с поставщиком в течение одного-двух лет.</li>
-	          </ul>
-	        </div>
-	      </details>
-	    </div>
+		<section class="name">
+			<div class="container name__container">
+				<h2 class="name__title">{{ post.title}}</h2>
+				<p class="name__autor">Автор: {{ post.author }}</p>
+				<p class="name__file">Расчет произведен по файлу {{ post.file_name }} загруженному {{ post.created_date }}</p>
+			</div>
+		</section>
+    <section class="indicators">
+      <div class="container indicators__container">
+					<div class="indicators__meter">
+						<div class="csi indicators__csi">
+							<h3 class="indicators__title">Индекс удовлетворенности</h3>
+							<p class="indicators__text">(в баллах)</p>
+							<img id="csi_meter_needle" src="{% static 'img/svg-meter-gauge-needle.svg'%}" alt="стрелка">
+							<img src="{% static 'img/GaugeChart3.png'%}"/>
+							<input id="slider1"  value="{{post.csi}}"/>
+							<p class="indicators__number">{{post.csi}}</p>
+						</div>
+						<div class="loy indicators__loy">
+							<h3 class="indicators__title">Индекс лояльности </h3>
+							<p class="indicators__text">(в баллах)</p>
+							<img id="loy_meter_needle" src="{% static 'img/svg-meter-gauge-needle.svg'%}" alt="">
+							<img src="{% static 'img/GaugeChart3.png'%}"/>
+							<input id="slider2"  value="{{post.loyalty}}"/>
+							<p class="indicators__number">{{post.loyalty}}</p>
+						</div>
+					</div>
+					<div class="scale indicators__scale">
+						<img src="{% static 'img/scale.png' %}" alt="ранги" class="indicators__scale-img">
+					</div>
       </div>
-    </div>
+		</section>
+		<section class="nps-barrier">
+			<div class="container nps-barrier__container">
+				<div class="nps">
+					<h3 class="nps-barrier__title">NPS</h3>
+					<img src="{% static 'img/nps.png' %}" alt="nps">
+					<p id="nps" class="nps-barrier__score">{{ post.nps }}</p>
+				</div>
+	
+				<div class="barrier">
+					<h3 class="nps-barrier__title">Барьеры перехода (баллы)</h3>
+					<img src="{% static 'img/barrier.png' %}" alt="barrier">
+					<p id="barrier" class="nps-barrier__score">{{ post.barrier }}</p>
+				</div>
+			</div>
+		</section>
+		<section class="matrix">
+			<div class="container matrix__container">
+				<h3 class="matrix__title">Матрица прогноза будущих продаж:</h3>
+				<div class="box clearfix">
+				<div class="box__left" style="color: #FFFFFF;">
+					<div class="left__top">
+						<center> <h5>Нелояльные клиенты</h5> </center>
+						<center><p id="gr_two"> {{ post.two }}% </p></center>
+					</div>
+					<div class="left__bot">
+						<center> <h5>Критики</h5> </center>
+						<center><p id="gr_one"> {{ post.one }}% </p></center>
+					</div>
+				</div>
+				<div class="box__right">
+					<div class="right__top">
+						<div class="top__small">
+							<center> <h5>Рекомендатели</h5> </center>
+							<center><p id="gr_four"> {{ post.four }}% </p></center>
+						</div>
+						<center> <h5>Основные клиенты</h5> </center>
+						<center><p id="gr_five"> {{ post.five }}% </p></center>
+					</div>
+					<div class="right__bot">
+						<center> <h5>Лояльные клиенты</h5> </center>
+						<center><p id="gr_three"> {{ post.three }}% </p></center>
+					</div>
+				</div>
+					<div class="loyalty">Лояльность</div>
+					<div class="satisfaction">Удовлетворенность</div>
+					<div class="first__arrow"></div>
+					<div class="second__arrow"></div>
+				</div>
+			</div>
+		</section>
+			<section class="regress">
+				<div class="container regress__container">
+					<h2 class="regress__title">Рассчитайте изменение лояльности</h2>
+					<p class="regress__counter">При увеличении индекса удовлетворенности на <input id="csi_up" value="0"> баллов</p>
+					<p class="regress__counter" id="loy_up">индекс лояльности изменится на ... баллов</p>
+					<input type="button" name="" value="Рассчитать" class="typical__button regress__button" id="calc" onclick="reg_calc();">
+					<input id="coefa" value="{{post.regressa}}"/>
+				</div>
+			</section>
+			<section class="description">
+				<div class="container description__container">
+					<details>
+						<summary>Про барьеры перехода:</summary>
+						<div class="bar-det">
+							Положительное значение свидетельствует о наличии выстроенных барьеров перехода для клиентов к другим поставщикам, которые связаны со значительными затратами для них (денежные, временные, психологические, транзакционные и т.д.).
+						</div>
+					</details>
+					<details>
+						<summary>Про NPS:</summary>
+						<div class="nps-deta">
+							Показатель NPS, значение которого больше 0 принято считать как "хорошие отношения с клиентами", значение от "+50" стоит рассматривать как "отличные отношения с клиентами", показатель более "+70" стоит рассматривать как "исключительные отношения с клиентами".
+						</div>
+					</details>
+					<details class="matrix-det">
+						<summary>Про матрицу:</summary>
+						<div class="detail">
+							<ul>
+								<li><strong>Рекомендатели</strong> – наиболее удовлетворенные и одновременно высоколояльные клиенты, они представляют собой группу наиболее надежных и ценных клиентов. </li>
+								<li><strong>Основные клиенты</strong> – в достаточной степени удовлетворенные и лояльные клиенты. На них могут быть направлены основные усилия по развитию отношений, комплексные программы улучшений и перевода в группу рекомендателей. </li>
+								<li><strong>Лояльные клиенты</strong> – группа тех, кто привязан к поставщику из-за отсутствия возможности использовать продукцию других поставщиков, но они не проявляют удовлетворенности сотрудничеством (дают скорее негативные оценки). Удержание этой группы клиентов очень сильно зависит от действий конкурентов. </li>
+								<li><strong>Нелояльные клиенты</strong> – удовлетворены сотрудничеством в достаточной степени, но не имеют серьезной привязки к компании-поставщику и готовы легко перейти к другим поставщикам, если сложатся благоприятные обстоятельства для перехода. </li>
+								<li><strong>Клиенты-критики</strong> демонстрируют слабую удовлетворенность и лояльность компании, скорее негативное отношение к сотрудничеству. В этот сегмент попадают те, кто склонен сокращать сотрудничество с компанией. Согласно данным EPSI в нормальной конкурентной среде клиенты-критики прекращают взаимодействие с поставщиком в течение одного-двух лет.</li>
+							</ul>
+						</div>
+					</details>
+				</div>
+			</section>
 </main>
 
 {% include 'include/footer.html' %}
