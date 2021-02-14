@@ -2,10 +2,8 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-#SECRET_KEY = '+7w_b7@5@jkmswsbgx_h7!=xc%+j*ha&3zzcw=)q_b9%=if&-@'
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '+7w_b7@5@jkmswsbgx_h7!=xc%+j*ha&3zzcw=)q_b9%=if&-@')
 
-#DEBUG = True
 DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
 
 ALLOWED_HOSTS = []
@@ -59,18 +57,7 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-"""
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2-bina',
-        'NAME': 'epsi_info',
-        'USER': 'zagolode',
-        'PASSWORD': 'cf99365',
-        'HOST': 'localhost',
-        'PORT': '',
-    }
-}
-"""
+
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
