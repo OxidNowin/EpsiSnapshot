@@ -59,31 +59,33 @@
 		<section class="matrix">
 			<div class="container matrix__container">
 				<h3 class="matrix__title">Матрица прогноза будущих продаж:</h3>
-				<div class="box clearfix">
-				<div class="box__left" style="color: #FFFFFF;">
-					<div class="left__top">
-						<center> <h5>Нелояльные клиенты</h5> </center>
-						<center><p id="gr_two"> {{ post.two }}% </p></center>
-					</div>
-					<div class="left__bot">
-						<center> <h5>Критики</h5> </center>
-						<center><p id="gr_one"> {{ post.one }}% </p></center>
-					</div>
-				</div>
-				<div class="box__right">
-					<div class="right__top">
-						<div class="top__small">
-							<center> <h5>Рекомендатели</h5> </center>
-							<center><p id="gr_four"> {{ post.four }}% </p></center>
+				<div class="box">
+					<div class="box__main">
+						<div class="box__left" style="color: #FFFFFF;">
+							<div class="left__top">
+								 <h5>Нелояльные клиенты</h5>
+									<p id="gr_two"> {{ post.two }}% </p>
+							</div>
+							<div class="left__bot">
+								<h5>Критики</h5>
+								<p id="gr_one"> {{ post.one }}% </p>
+							</div>
 						</div>
-						<center> <h5>Основные клиенты</h5> </center>
-						<center><p id="gr_five"> {{ post.five }}% </p></center>
+						<div class="box__right">
+							<div class="right__top">
+								<div class="top__small">
+								<h5>Рекомендатели</h5>
+								<p id="gr_four"> {{ post.four }}% </p>
+								</div>
+								<h5>Основные клиенты</h5>
+								<p id="gr_five"> {{ post.five }}% </p>
+							</div>
+							<div class="right__bot">
+								<h5>Лояльные клиенты</h5>
+								<p id="gr_three"> {{ post.three }}% </p>
+							</div>
+						</div>
 					</div>
-					<div class="right__bot">
-						<center> <h5>Лояльные клиенты</h5> </center>
-						<center><p id="gr_three"> {{ post.three }}% </p></center>
-					</div>
-				</div>
 					<div class="loyalty">Лояльность</div>
 					<div class="satisfaction">Удовлетворенность</div>
 					<div class="first__arrow"></div>

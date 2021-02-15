@@ -12,26 +12,30 @@
 	       <ul class="archive__list">
 	       {% for post in archive_latest_post_list %}
 	         <li class="archive__item">			    
-				<div class="date">
-			        {{ post.created_date }}
-				</div>
-				<div class="archive_title">
-					<h2><a href="{% url 'detail' post.id %}">{{ post.title}}</a></h2>
-				</div>
-				<div class="csi_index" >
-					<img id="csi_index_meter_needle" src="{% static 'img/svg-meter-gauge-needle.svg'%}" alt="">
-					<img src="{% static 'img/schet.png'%}"/>
-					<input id="slider1"  value="{{post.csi}}"/>
-					<p><center>CSI: {{post.csi}}</center></p>
-				</div>
-				<div class="loy_index">
-					<div>
-						<img id="loy_index_meter_needle" src="{% static 'img/svg-meter-gauge-needle.svg'%}" alt="">
-					</div>
-					<img src="{% static 'img/schet.png'%}"/>
-					<input id="slider2"  value="{{post.loyalty}}"/>
-					<p><center>Лояльность: {{post.loyalty}}</center></p>
-			   	</div>
+						<div class="archive__item-header">
+							<p class="archive__date">
+								{{ post.created_date }}
+							</p>
+							<h3 class="archive__title">
+								<a href="{% url 'detail' post.id %}"  class="archive__title-link">{{ post.title}}</a>
+							</h3>
+						</div>
+						<div class="archive__item-main">
+							<div class="csi_index" >
+								<img id="csi_index_meter_needle" src="{% static 'img/svg-meter-gauge-needle.svg'%}" alt="">
+								<img src="{% static 'img/schet.png'%}"/>
+								<input id="slider1"  value="{{post.csi}}"/>
+								<p class="archive__item-index">CSI: {{post.csi}}</p>
+							</div>
+							<div class="loy_index">
+								<div>
+									<img id="loy_index_meter_needle" src="{% static 'img/svg-meter-gauge-needle.svg'%}" alt="">
+								</div>
+								<img src="{% static 'img/schet.png'%}"/>
+								<input id="slider2"  value="{{post.loyalty}}"/>
+								<p class="archive__item-index">Лояльность: {{post.loyalty}}</p>
+								</div>
+						</div>
 	         </li>
 	        {% endfor %}
 	       </ul>

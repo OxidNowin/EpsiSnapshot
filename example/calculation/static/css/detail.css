@@ -250,13 +250,8 @@ details[open] div{
     position:relative;
 }
 
-.clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
 .left__top{
+  text-align: center;
 	background: #376092;
 	height: 229px;
 	width: 127px;
@@ -270,6 +265,7 @@ details[open] div{
 }
 
 .left__bot{
+  text-align: center;
 	background: #10253f;
 	width: 127px;
 	height: 118px;
@@ -282,6 +278,7 @@ details[open] div{
 }
 
 .right__top{
+  text-align: center;
 	width: 224px;
 	height: 229px;
 	background: #95b3d7;
@@ -294,6 +291,7 @@ details[open] div{
 }
 
 .right__bot{
+  text-align: center;
 	background: #558ed5;
 	width: 224px;
 	height: 118px;
@@ -305,6 +303,7 @@ details[open] div{
 }
 
 .top__small{
+  text-align: center;
 	background: #b9cde5;
 	width: 145px;
 	height: 133px;
@@ -313,9 +312,18 @@ details[open] div{
 	border-bottom: 2px solid #fff;
 }
 
-.box__left,
-.box__right{
-	float: left;
+.box__main {
+  display: flex;
+}
+
+.box__left {
+  display: flex;
+  flex-direction: column;
+}
+
+.box__right {
+  display: flex;
+  flex-direction: column;
 }
 
 .loyalty{
@@ -535,10 +543,14 @@ details {
 
 @media (max-width: 470px) {
 
-  .indicators__scale {
-    margin-top: 0px;
+  .regress__container {
+    padding-top: 0px;
   }
 
+  .matrix {
+    display: none;
+  }
+  
   .indicators__scale-img {
     height: 50px;
   }

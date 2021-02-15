@@ -15,7 +15,7 @@
       {% if error_message %}
       <strong class="org__error">{{ error_message }}</strong>
       {% endif %}
-      <input type="text" name="title" required id="org__form-name" class="org__form-name">
+      <input type="text" name="title" required id="org__form-name" maxlength="25" class="org__form-name">
       <input type="file" name="file" id="real-file" hidden="hidden">
       <button type="button" id="custom-button" class="org__file-button typical__button_small">Выберите файл</button>
       <span id="custom-text" class="org__file-text">Файл не выбран</span>
