@@ -63,6 +63,15 @@
   height: 100%;
 }
 
+@media (max-width: 460px) {
+  .calculate {
+    background-attachment: scroll;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
 @media (max-width: 350px) {
   .org__title {
     font-size: 25px;
