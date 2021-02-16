@@ -9,7 +9,7 @@ customBtn.addEventListener("click", function() {
 realFileBtn.addEventListener("change", function() {
   if (realFileBtn.value) {
     customTxt.innerHTML = realFileBtn.value.match(
-      /[\/\\]([\w\d\s\.\-\(\)]+)$/
+      /[\/\\]([А-Яа-я\w\d\s\.\-\(\)]+)$/
     )[1];
   } else {
     customTxt.innerHTML = "No file chosen, yet.";
