@@ -36,9 +36,7 @@ def new(request):
                                                             'error_message':'Упс! Выберете файл с расширением .xlsx,.xlsm,.xltx,.xltm'
                                                             })    
         else:
-            try:
-                validate(table_of_values)
-            except:
+            if validate(table_of_values) != True:
                 form = PostForm()
                 return render(request, 'calculation/new.html', {'form': form,
                                                             'error_message':'Упс! Похоже в вашем файле есть некорректные символы или значения ячеек'
@@ -50,7 +48,6 @@ def new(request):
                     post.created_date = timezone.now()
                     post.file_name = post.file.name
                     table = handle_uploaded_file(table_of_values)
-                    post.save()
                     post.csi, post.loyalty = count_csi_and_loyalty(table)
                     [post.one,post.two,post.three,post.four,post.five] = count_group(table)
                     post.regressa = regress(table)
