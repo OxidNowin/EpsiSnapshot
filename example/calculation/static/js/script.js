@@ -2,12 +2,12 @@
 var meter_needle =  document.querySelector('img#csi_meter_needle');
 var slider1 = document.querySelector('.csi #slider1').value;
 slider1 = slider1.replace("," , ".");
-meter_needle.style.transform = 'rotate(' + (-148 + (Number(slider1)*2.96)) + 'deg)';
+meter_needle.style.transform = 'rotate(' + (-150 + (Number(slider1)*3)) + 'deg)';
 
 var meter_needle =  document.querySelector('#loy_meter_needle');
 var slider2 = document.querySelector('.loy #slider2').value;
 slider2 = slider2.replace("," , ".");
-meter_needle.style.transform = 'rotate(' + (-148 + (Number(slider2)*2.96)) + 'deg)';
+meter_needle.style.transform = 'rotate(' + (-150 + (Number(slider2)*3)) + 'deg)';
 
 /* возрастание */
 function reg_calc() {
