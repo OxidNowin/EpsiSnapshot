@@ -21,12 +21,16 @@
 }
 
 .org__form-name {
-  background: var(--yellow-bg-color);
+  padding: 10px;
+  box-sizing: border-box;
+  background: var(--white-color);
   max-width: 300px;
   width: 100%;
-  height: 40px;
-  border: 2px solid var(--black-color);
+  height: 50px;
+  border: 0px;
+  border-radius: 5px;
   margin-top: 20px;
+  outline: none;
 }
 
 .org__error {
@@ -45,6 +49,9 @@
   font-weight: 400;
   color: var(--black-color);
 }
+
+
+
 
 /* calculate */
 

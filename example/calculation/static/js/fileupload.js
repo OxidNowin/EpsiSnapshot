@@ -8,10 +8,8 @@ customBtn.addEventListener("click", function() {
 
 realFileBtn.addEventListener("change", function() {
   if (realFileBtn.value) {
-    customTxt.innerHTML = realFileBtn.value.match(
-      /[\/\\]([\w\d\s\А-Яа-я\.\-\(\)]+)$/
-    )[1];
+    customTxt.innerHTML = 'Выбрано файлов: 1';
   } else {
-    customTxt.innerHTML = "No file chosen, yet.";
+    customTxt.innerHTML = "Файл не выбран";
   }
 });
