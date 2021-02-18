@@ -121,7 +121,7 @@
   width: 30px;
   display: inline-block;
   transform-origin:50% 90%;
-  transform:rotate(-148deg);
+  transform:rotate(-150deg);
   z-index: 100;
 }
 
@@ -361,7 +361,7 @@ details[open] div{
     transform: rotate(-45deg);
     position: absolute;
     top: 0px;
-    left: -13px;
+    left: -18px;
 }
 
 .second__arrow{
@@ -373,7 +373,7 @@ details[open] div{
     transform: rotate(45deg);
     position: absolute;
     right: -60px;
-    bottom: -13px;
+    bottom: -18px;
 }
 
 #gr_one{
@@ -399,7 +399,7 @@ details[open] div{
 
 #gr_five{
   position: relative;
-  top: 25px;
+  top: 13px;
 }/*основные клиенты*/
 
 /* regress */

@@ -147,18 +147,18 @@
   position: absolute;
   width: 9px;
   display: inline-block;
-  transform-origin:bottom center;
+  transform-origin:50% 90%;
   transform:rotate(265deg);
   z-index: 100;
 }
 
 #loy_index_meter_needle{
   width: 9px;
-  left: 70px;
+  left: 80px;
   top: 28px;
   position: absolute;
   display: inline-block;
-  transform-origin:bottom center;
+  transform-origin:50% 90%;
   transform:rotate(265deg);
   z-index: 100;
 }
