@@ -5,8 +5,8 @@
   min-height: 40vh;
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-direction: column;
+  box-sizing: border-box;
   padding-left: 15px;
   padding-right: 15px;
   padding-top: 20px;
