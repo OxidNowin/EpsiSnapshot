@@ -46,7 +46,7 @@
   opacity: 0.2;
 }
 
-.archive__item-link:hover {
+.archive__item-link:hover,.archive__item-link:focus {
   background-color: var(--black-color);
 }
 
@@ -69,7 +69,7 @@
   transition: fill 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-.archive__back-button:hover {
+.archive__back-button:hover,.archive__back-button:focus {
   fill: var(--a-hover);
 }
 
@@ -98,7 +98,7 @@
   transition: background-color 0.3s ease-in-out;
 }
 
-.archive__title:hover {
+.archive__title:hover,.archive__title:focus {
   background-color: var(--black-color);
 }
 

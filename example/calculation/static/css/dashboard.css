@@ -30,7 +30,7 @@
   transition: fill 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-.table-close:hover{
+.table-close:hover,.table-close:focus{
   fill: var(--red-color);
 }
 
@@ -105,7 +105,7 @@
   transition: fill 0.3s ease-in-out;
 }
 
-.manual__item-arrow:hover {
+.manual__item-arrow:hover,.manual__item-arrow:focus {
   fill: var(--red-color);
 }
 

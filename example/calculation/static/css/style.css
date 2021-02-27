@@ -111,7 +111,7 @@
   text-decoration: none;
 }
 
-.typical__button:hover {
+.typical__button:hover,.typical__button:focus {
   background-color: var(--red-color);
 }
 
@@ -136,7 +136,7 @@
   text-decoration: none;
 }
 
-.typical__button_small:hover {
+.typical__button_small:hover,.typical__button_small:focus {
   background-color: var(--red-color);
 }
 
@@ -215,7 +215,7 @@
   transition: fill 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-.header__autorisation:hover {
+.header__autorisation:hover,.header__autorisation:focus {
   fill: var(--a-hover);
 }
 
@@ -228,7 +228,7 @@
   height: 56px;
 }
 
-.header__logo:hover {
+.header__logo:hover,.header__logo:focus {
   opacity: 0.9;
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
@@ -245,7 +245,7 @@
   transition: transform 0.3s ease-in-out, fill 0.3s ease-in-out;
 }
 
-.header__number-icon:hover {
+.header__number-icon:hover,.header__number-icon:focus {
   fill: var(--a-hover);
 }
 
@@ -260,7 +260,7 @@
   transition: fill 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-.header__back-button:hover {
+.header__back-button:hover,.header__back-button:focus {
   fill: var(--a-hover);
 }
 
@@ -328,7 +328,7 @@
 }
 
 
-.footer__number:hover {
+.footer__number:hover,.footer__number:focus {
   color: var(--a-hover)
 }
 
@@ -359,7 +359,7 @@
   transition: color 0.3s ease-in-out;
 }
 
-.footer__link:hover {
+.footer__link:hover,.footer__link:focus {
   color: var(--a-hover);
 }
 
@@ -388,7 +388,7 @@
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-.footer__vk-link:hover {
+.footer__vk-link:hover,.footer__vk-link:focus {
   opacity: 1;
 }
 
@@ -407,7 +407,7 @@
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-.footer__fb-link:hover {
+.footer__fb-link:hover,.footer__fb-link:focus {
   opacity: 1;
 }
 
@@ -426,7 +426,7 @@
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-.footer__tw-link:hover {
+.footer__tw-link:hover,.footer__tw-link:focus {
   opacity: 1;
 }
 
@@ -444,7 +444,7 @@
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-.footer__inst-link:hover {
+.footer__inst-link:hover,.footer__inst-link:focus {
   opacity: 1;
 }
 
